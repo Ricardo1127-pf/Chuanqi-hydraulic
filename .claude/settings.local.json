@@ -1,0 +1,7 @@
+{
+  "permissions": {
+    "allow": [
+      "PowerShell(Copy-Item -Path \"$env:USERPROFILE\\\\Desktop\\\\独立站马达图片\\\\CBM.png\" -Destination \"public/images/cbm.png\")"
+    ]
+  }
+}
