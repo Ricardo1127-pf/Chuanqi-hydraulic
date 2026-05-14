@@ -1,7 +1,7 @@
 import { products } from "@/data/products";
 import type { MetadataRoute } from "next";
 
-const BASE_URL = "https://chuanchen-hydraulic.vercel.app";
+const BASE_URL = "https://chuanqi-hydraulic.vercel.app";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const langs = ["zh", "en"];
