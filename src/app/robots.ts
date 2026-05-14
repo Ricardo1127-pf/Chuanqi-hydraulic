@@ -9,6 +9,6 @@ export default function robots(): MetadataRoute.Robots {
         disallow: ["/api/", "/_next/"],
       },
     ],
-    sitemap: "https://chuanqi-hydraulic.vercel.app/sitemap.xml",
+    sitemap: "https://chuanqipower.com/sitemap.xml",
   };
 }
