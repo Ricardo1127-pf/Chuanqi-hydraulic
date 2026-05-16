@@ -1,5 +1,26 @@
+import type { Metadata } from "next";
 import { type Lang, t } from "@/lib/i18n";
 import InquiryForm from "@/components/InquiryForm";
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ lang: string }>;
+}): Promise<Metadata> {
+  const { lang } = await params;
+  const l = (lang === "zh" || lang === "en" ? lang : "en") as Lang;
+  return {
+    title: t(l, "contact.title") as string,
+    description: t(l, "contact.subtitle") as string,
+    alternates: {
+      canonical: `/${l}/contact`,
+      languages: {
+        en: "/en/contact",
+        zh: "/zh/contact",
+      },
+    },
+  };
+}
 
 export default async function ContactPage({
   params,

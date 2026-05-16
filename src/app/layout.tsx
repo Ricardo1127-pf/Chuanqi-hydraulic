@@ -1,3 +1,4 @@
+import { headers } from "next/headers";
 import type { Metadata } from "next";
 import "./globals.css";
 
@@ -27,15 +28,20 @@ export const metadata: Metadata = {
   robots: "index, follow",
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
+  const headersList = await headers();
+  const lang = headersList.get("x-lang") || "en";
+
   return (
-    <html lang="zh">
+    <html lang={lang}>
       <head>
         <link rel="icon" type="image/png" href="/images/logo.png" />
+        <meta name="baidu-site-verification" content="code-YOUR_BAIDU_CODE" />
+        <meta name="sogou_site_verification" content="YOUR_SOGOU_CODE" />
       </head>
       <body className="min-h-screen flex flex-col">{children}</body>
     </html>

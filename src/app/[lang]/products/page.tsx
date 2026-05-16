@@ -1,8 +1,29 @@
 import Link from "next/link";
+import type { Metadata } from "next";
 import { type Lang, t } from "@/lib/i18n";
 import { CATEGORIES } from "@/types/product";
 import { getProductsByCategory } from "@/data/products";
 import ProductCard from "@/components/ProductCard";
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ lang: string }>;
+}): Promise<Metadata> {
+  const { lang } = await params;
+  const l = (lang === "zh" || lang === "en" ? lang : "en") as Lang;
+  return {
+    title: t(l, "products.title") as string,
+    description: t(l, "products.subtitle") as string,
+    alternates: {
+      canonical: `/${l}/products`,
+      languages: {
+        en: "/en/products",
+        zh: "/zh/products",
+      },
+    },
+  };
+}
 
 export default async function ProductsPage({
   params,

@@ -1,5 +1,26 @@
 import Link from "next/link";
+import type { Metadata } from "next";
 import { type Lang, t } from "@/lib/i18n";
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ lang: string }>;
+}): Promise<Metadata> {
+  const { lang } = await params;
+  const l = (lang === "zh" || lang === "en" ? lang : "en") as Lang;
+  return {
+    title: t(l, "about.title") as string,
+    description: t(l, "about.subtitle") as string,
+    alternates: {
+      canonical: `/${l}/about`,
+      languages: {
+        en: "/en/about",
+        zh: "/zh/about",
+      },
+    },
+  };
+}
 
 export default async function AboutPage({
   params,

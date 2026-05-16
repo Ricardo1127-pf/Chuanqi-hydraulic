@@ -8,7 +8,10 @@ export function proxy(request: NextRequest) {
 
   // Skip if path starts with a language prefix
   if (LANGUAGES.some((lang) => pathname.startsWith(`/${lang}`))) {
-    return NextResponse.next();
+    const response = NextResponse.next();
+    const lang = LANGUAGES.find((l) => pathname.startsWith(`/${l}`)) || "en";
+    response.headers.set("x-lang", lang);
+    return response;
   }
 
   // Skip static files

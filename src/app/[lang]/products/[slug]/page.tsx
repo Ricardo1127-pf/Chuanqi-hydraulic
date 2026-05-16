@@ -75,23 +75,54 @@ export default async function ProductDetailPage({
     (p) => p.slug !== product.slug
   );
 
-  const jsonLd = {
-    "@context": "https://schema.org",
-    "@type": "Product",
-    name: product.name[l],
-    description: product.description[l],
-    image: product.images[0],
-    category: product.category,
-    manufacturer: {
-      "@type": "Organization",
-      name: l === "zh" ? "宁波传祺液压有限公司" : "ChuanQi Hydraulic",
+  const jsonLd = [
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      itemListElement: [
+        {
+          "@type": "ListItem",
+          position: 1,
+          name: t(l, "nav.home") as string,
+          item: `https://chuanqipower.com/${l}`,
+        },
+        {
+          "@type": "ListItem",
+          position: 2,
+          name: t(l, "nav.products") as string,
+          item: `https://chuanqipower.com/${l}/products`,
+        },
+        {
+          "@type": "ListItem",
+          position: 3,
+          name: product.name[l],
+          item: `https://chuanqipower.com/${l}/products/${product.slug}`,
+        },
+      ],
     },
-    offers: {
-      "@type": "Offer",
-      availability: "https://schema.org/InStock",
-      itemCondition: "https://schema.org/NewCondition",
+    {
+      "@context": "https://schema.org",
+      "@type": "Product",
+      name: product.name[l],
+      description: product.description[l],
+      image: product.images[0],
+      category: product.category,
+      sku: product.slug,
+      brand: {
+        "@type": "Brand",
+        name: "ChuanQi Hydraulic",
+      },
+      manufacturer: {
+        "@type": "Organization",
+        name: l === "zh" ? "宁波传祺液压有限公司" : "ChuanQi Hydraulic",
+      },
+      offers: {
+        "@type": "Offer",
+        availability: "https://schema.org/InStock",
+        itemCondition: "https://schema.org/NewCondition",
+      },
     },
-  };
+  ];
 
   return (
     <>
