@@ -22,7 +22,7 @@ export async function generateMetadata({
     product.category,
     "radial piston hydraulic motor",
     "low speed high torque motor",
-    "Hägglunds replacement",
+    "LSHT hydraulic motor",
     "China hydraulic motor manufacturer",
     "ChuanQi Hydraulic",
   ];
@@ -32,7 +32,7 @@ export async function generateMetadata({
     product.category,
     "径向柱塞液压马达",
     "低速大扭矩马达",
-    "赫格隆替代",
+    "低速大扭矩马达",
     "液压马达厂家",
     "传祺液压",
   ];

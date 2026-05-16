@@ -14,7 +14,7 @@ const dict = {
   zh: {
     site: {
       title: '宁波传祺液压 - 径向柱塞液压马达 | CA/CB/CBP/CBM/MB系列',
-      description: '宁波传祺液压有限公司专业生产CA、CB、CBP、CBM、MB系列径向柱塞液压马达，替代赫格隆Hägglunds马达，提供液压泵、液压阀、液压绞车。高品质，全球供应。',
+      description: '宁波传祺液压有限公司专业生产CA、CB、CBP、CBM、MB系列径向柱塞液压马达，替代低速大扭矩液压马达，提供液压泵、液压阀、液压绞车。高品质，全球供应。',
     },
     nav: {
       home: '首页',
@@ -103,7 +103,7 @@ const dict = {
   en: {
     site: {
       title: 'Radial Piston Hydraulic Motors | CA CB CBP CBM MB Series - ChuanQi Hydraulic',
-      description: 'ChuanQi Hydraulic manufactures CA, CB, CBP, CBM, MB series radial piston hydraulic motors, replacements for Hägglunds. Also supplies hydraulic pumps, valves, winches. Factory-direct quality, global shipping.',
+      description: 'ChuanQi Hydraulic manufactures CA, CB, CBP, CBM, MB series low speed high torque radial piston hydraulic motors. Also supplies hydraulic pumps, valves, winches. Factory-direct quality, global shipping.',
     },
     nav: {
       home: 'Home',

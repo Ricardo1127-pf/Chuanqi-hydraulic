@@ -8,10 +8,10 @@ export const metadata: Metadata = {
     template: "%s | ChuanQi Hydraulic",
   },
   description:
-    "ChuanQi Hydraulic manufactures CA, CB, CBP, CBM, MB series radial piston hydraulic motors — quality replacements for Hägglunds. Also hydraulic pumps, valves, winches. Factory-direct, global shipping.",
+    "ChuanQi Hydraulic manufactures CA, CB, CBP, CBM, MB series low speed high torque radial piston hydraulic motors. Also hydraulic pumps, valves, winches. Factory-direct, global shipping.",
   keywords: [
     "radial piston hydraulic motor",
-    "Hägglunds replacement",
+    "LSHT hydraulic motor",
     "CA hydraulic motor",
     "CB hydraulic motor",
     "CBP hydraulic motor",
